@@ -38,6 +38,7 @@ const AddModal = ({ onClose, onAddTask }) => {
         <input
           type="text"
           value={taskText}
+          autoFocus
           onChange={handleTaskChange}
           placeholder="Enter task..."
           className="w-full border bg-secondary_bgcolor outline-none text-sm border-gray-300 rounded placeholder:text-xs placeholder:text-text_secondary px-3 py-2 mb-4"

@@ -12,6 +12,7 @@ const UserName = ({ handleAddUser }) => {
         <input
           type="text"
           value={username}
+          autoFocus
           onChange={(e) => setusername(e.target.value.trim())}
           placeholder="Enter username..."
           className="w-full border bg-secondary_bgcolor capitalize outline-none text-sm border-gray-300 rounded placeholder:text-xs placeholder:text-text_secondary px-3 py-2 mb-4"
