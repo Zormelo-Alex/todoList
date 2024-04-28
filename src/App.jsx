@@ -111,37 +111,39 @@ function App() {
   }, [tasks]);
 
   return (
-    <div className="bg-bg_color min-h-screen p-6">
-      {isAddOpen && (
-        <AddModal onAddTask={addTask} onClose={() => setisAddOpen(false)} />
-      )}
-      {isUserModelOpen && <UserName handleAddUser={handleUsernameChange} />}
-      <Header name={username} />
-      <Search placeholder={"Search your Lists"} onChange={searchTask} />
-      <Filter handleFilter={filterTasks} />
-      <div className="mt-16 text-text_secondary">
-        <h3>Tasks</h3>
-      </div>
-      <div className="flex flex-col gap-2 mt-8">
-        {displayedTasks.length ? (
-          <div>
-            {displayedTasks?.map((task, index) => (
-              <div key={index} className="my-2">
-                <Task
-                  data={task}
-                  handleChecked={handleChecked}
-                  handleDelete={handleDelete}
-                />
-              </div>
-            ))}
-          </div>
-        ) : (
-          <div className="flex justify-center text-text_secondary text-sm mt-8">
-            <p>Add a new task...</p>
-          </div>
+    <div className="bg-secondary_bgcolor flex justify-center w-full items-center sm:p-8">
+      <div className="bg-bg_color min-h-screen p-6 w-full sm:w-[500px] relative sm:rounded">
+        {isAddOpen && (
+          <AddModal onAddTask={addTask} onClose={() => setisAddOpen(false)} />
         )}
+        {isUserModelOpen && <UserName handleAddUser={handleUsernameChange} />}
+        <Header name={username} />
+        <Search placeholder={"Search your Lists"} onChange={searchTask} />
+        <Filter handleFilter={filterTasks} />
+        <div className="mt-16 text-text_secondary">
+          <h3>Tasks</h3>
+        </div>
+        <div className="flex flex-col gap-2 mt-8">
+          {displayedTasks.length ? (
+            <div>
+              {displayedTasks?.map((task, index) => (
+                <div key={index} className="my-2">
+                  <Task
+                    data={task}
+                    handleChecked={handleChecked}
+                    handleDelete={handleDelete}
+                  />
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="flex justify-center text-text_secondary text-sm mt-8">
+              <p>Add a new task...</p>
+            </div>
+          )}
+        </div>
+        <AddTask handleAdd={() => setisAddOpen(true)} />
       </div>
-      <AddTask handleAdd={() => setisAddOpen(true)} />
     </div>
   );
 }
