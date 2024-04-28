@@ -118,7 +118,7 @@ function App() {
         )}
         {isUserModelOpen && <UserName handleAddUser={handleUsernameChange} />}
         <Header name={username} />
-        <Search placeholder={"Search your Lists"} onChange={searchTask} />
+        <Search placeholder={"Search your Tasks"} onChange={searchTask} />
         <Filter handleFilter={filterTasks} />
         <div className="mt-16 text-text_secondary">
           <h3>Tasks</h3>
