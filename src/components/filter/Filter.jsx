@@ -10,7 +10,7 @@ const Filter = ({handleFilter}) => {
         <div className="absolute right-[70px] w-[190px]">
           <select
             className={`w-full shadow-md rounded overflow-hidden transition-all duration-300 outline-none bg-secondary_bgcolor text-text_primary pl-2 ${
-              isOpen ? "h-[40px]" : "h-[0px]"
+              isOpen ? "h-[40px]" : "h-[0px] opacity-0"
             }`}
             onChange={(e)=> handleFilter(e.target.value)}
           >
