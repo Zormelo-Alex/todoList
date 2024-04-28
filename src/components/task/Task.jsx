@@ -14,7 +14,7 @@ const Task = ({ data, handleChecked, handleDelete }) => {
   return (
     <div className={`bg-secondary_bgcolor w-full p-3 rounded shadow-md flex justify-between transition-all ease-in ${(isChecked || data.completed) && "opacity-[50%]"}`}>
       <div className="flex flex-col gap-2">
-        <h3 className={`text-text_primary max-w-[320px] sm:max-w-full overflow-hidden ${isChecked && "line-through"}`}>{data.task}</h3>
+        <h3 className={`text-text_primary max-w-[320px] sm:max-w-full overflow-hidden ${(isChecked || data.completed) && "line-through"}`}>{data.task}</h3>
         <div className="flex text-text_secondary gap-3 text-xs">
           <p>{moment(data.date).format("Do MMM")}</p>
           <p>{moment(data.date).format("h:mma")}</p>
