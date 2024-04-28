@@ -112,7 +112,7 @@ function App() {
 
   return (
     <div className="bg-secondary_bgcolor flex justify-center w-full items-center sm:p-8">
-      <div className="bg-bg_color min-h-screen p-6 w-full sm:w-[500px] relative sm:rounded">
+      <div className="bg-bg_color min-h-screen p-6 w-full sm:w-[500px] relative sm:rounded sm:shadow-lg">
         {isAddOpen && (
           <AddModal onAddTask={addTask} onClose={() => setisAddOpen(false)} />
         )}
